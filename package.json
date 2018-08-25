@@ -1,0 +1,30 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "Handlebar demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gscoggin/Burger.git"
+  },
+  "keywords": [
+    "handlebars",
+    "node.js",
+    "javascript"
+  ],
+  "author": "Gabe Scoggin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gscoggin/Burger/issues"
+  },
+  "homepage": "https://github.com/gscoggin/Burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
