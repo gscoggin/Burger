@@ -1,38 +1,82 @@
-<h1>BURGERS!</h1>
+<div class = "row">
 
-<h2>Burgers that are not Devoured!</h2>
+    <div class = "col-md-2"></div>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+    <div class = "col-md-4">
 
-<h2>Burgers that are Devoured!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+        <div class="card ml-5" style="max-width: 18rem;">
+            <div class="card-header">Burgers To Eat</div>
+            <div class="undevoured card-body">
+            
+                {{#each burgers}}
 
-<h2>Add a Burger</h2>
-<form class="create-update-form">
+                    {{#if this.devoured}}
 
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
+                    {{else}}
 
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+                        {{this.burger_name}}
 
-  <button type="submit">Add Burger</button>
-</form>
+                        <button class = "btn-sm btn-primary devour" data-id = "{{this.id}}">Devour!</button>
+
+                        <br>
+
+                    {{/if}} 
+
+                {{/each}}
+
+            <br><br>
+
+            </div>
+        </div>
+  
+    </div>
+
+        <div class = "col-md-4">
+
+
+        <div class="card" style="max-width: 18rem;">
+            <div class="card-header">Burgers Eaten</div>
+            <div class="card-body">
+            
+                {{#each burgers}}
+
+                {{#if this.devoured}}
+
+                    {{this.burger_name}}
+
+                    <br>
+
+                {{/if}} 
+
+                {{/each}}
+
+            </div>
+        </div>
+  
+    </div>
+
+    <div class = "col-md-2"></div>
+
+    </div>
+
+    <div class = "row">
+
+        <div class = "col-md-4 mx-auto">
+
+
+            <form class = "create-form"></form>
+
+                <div class = "form-group">
+
+                    <textarea id = "newBurger"></textarea><br>
+
+                    <button class = "btn btn-danger" type ="submit" id ="submit">Add a burger! <i class="fas fa-plus-circle"></i></button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
