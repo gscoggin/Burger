@@ -1,4 +1,4 @@
-var connection = require('../config/connection.js');
+var connection = require('../config/connections.js');
 
 // Helper function for SQL syntax that dynamically generates the necessary number of "?"
 // The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
